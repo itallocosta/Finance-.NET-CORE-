@@ -8,6 +8,7 @@ namespace Entities.Entities
 {
     public class Base: Notifies
     {
+        [Key]
         [Display(Name="Codigo")]
         public int Id { get; set; }
         
