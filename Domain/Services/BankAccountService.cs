@@ -20,7 +20,14 @@ namespace Domain.Services
 
         public async Task<BankAccount> CreateAccount(BankAccount bankAccount)
         {
-            await _bankAccount.Add(bankAccount);
+            bankAccount.ValidateString(bankAccount.BankName, "BankName");
+            bankAccount.ValidateDecimal(bankAccount.Overdraft, "Overdraft");
+            bankAccount.ValidateDecimal(bankAccount.InterestRate, "InterestRate");
+            bankAccount.Active = true;
+            if (bankAccount.NotifyList.Count == 0) {
+                await _bankAccount.Add(bankAccount);
+            } 
+
             return bankAccount;
         }
 

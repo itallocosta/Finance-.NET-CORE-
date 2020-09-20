@@ -55,7 +55,7 @@ namespace Entities.Notifications
             return false;
         }
 
-        public bool ValidateInteger(decimal valor, string propertyName)
+        public bool ValidateDecimal(decimal valor, string propertyName)
         {
             if (valor > 0 && !string.IsNullOrWhiteSpace(propertyName))
             {
