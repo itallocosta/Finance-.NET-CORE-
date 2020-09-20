@@ -41,8 +41,7 @@ namespace Domain.Services
 
         public async Task<IList<BankAccount>> ListAccounts()
         {
-            var bankAccounts = await _bankAccount.List();
-            return bankAccounts.Where(bc => bc.Active == true).ToList();   
+            return await _bankAccount.List();
         }
     }
 }
