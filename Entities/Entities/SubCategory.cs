@@ -15,7 +15,7 @@ namespace Entities.Entities
 /*
  *
  * - Contas (pagar, receber), Receitas, Investimento
- *     - SubCategoria
- *         - Categoria
+ *     - SubCategoria (Ex: Categoria: Receitas - SubCategoria: Freelas, Categoria: Fixo - SubCategoria: Prestações)
+ *         - Categoria (Ex: Receitas, Fixo, Variáveis)
  *     - BankAccount
  */
