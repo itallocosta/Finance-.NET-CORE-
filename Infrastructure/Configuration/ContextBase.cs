@@ -1,12 +1,13 @@
 ﻿using Entities.Entities;
+using IdentityServer4.EntityFramework.Entities;
+using IdentityServer4.EntityFramework.Interfaces;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace Infrastructure.Configuration
 {
-    public class ContextBase : DbContext
+    public class ContextBase : IdentityDbContext
     {
         public ContextBase(DbContextOptions<ContextBase> options): base(options)
         {
@@ -15,7 +16,7 @@ namespace Infrastructure.Configuration
         public DbSet<BankAccount> BankAccount { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<SubCategory> SubCategory { get; set; }
-    
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (optionsBuilder.IsConfigured)
